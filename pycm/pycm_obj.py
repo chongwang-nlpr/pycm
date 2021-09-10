@@ -948,7 +948,7 @@ class ConfusionMatrix():
         if cmap is None:
             cmap = plt.cm.gray_r
         fig, ax = plt.subplots()
-        fig.canvas.set_window_title(title)
+        #fig.canvas.set_window_title(title)
         if plot_lib == 'seaborn':
             try:
                 import seaborn as sns
@@ -964,7 +964,10 @@ class ConfusionMatrix():
                 number_label,
                 plot_lib)
         plt.imshow(matrix, cmap=cmap)
-        plt.colorbar()
+        #plt.colorbar()
+        cbar = plt.colorbar()
+        for t in cbar.ax.get_yticklabels():
+             t.set_fontsize(6)
         return axes_gen(
             ax,
             classes,
