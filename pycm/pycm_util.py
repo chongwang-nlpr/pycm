@@ -541,16 +541,16 @@ def axes_gen(
     :type plot_lib: str
     :return: changed axes
     """
-    ax.set_title(title)
+    ax.set_title(title, fontsize=6)
     positions = list(range(len(classes)))
     if plot_lib == 'seaborn':
         positions = list(map(lambda x: x + 0.5, positions))
     ax.set_xticks(positions)
-    ax.set_xticklabels(classes)
-    ax.set_xlabel("Predicted Classes")
+    ax.set_xticklabels(classes, fontsize=2)
+    ax.set_xlabel("Predicted Classes", fontsize=6)
     ax.set_yticks(positions)
-    ax.set_yticklabels(classes)
-    ax.set_ylabel("Actual Classes")
+    ax.set_yticklabels(classes, fontsize=2)
+    ax.set_ylabel("Actual Classes", fontsize=6)
     if number_label:
         add_number_label(
             ax,
